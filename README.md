@@ -4,6 +4,6 @@
 ### Thành Viên Của Nhóm
 | MSSV          | Tên           | Email |SĐT       |
 | ------------- |:-------------:| -----:|---------:|
-| col 3 is      | Đỗ Minh Hiển | $1600 |0383755558|
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+| 1660187      | [Đỗ Minh Hiển](https://www.facebook.com/widebusinessman) | $1600 |0383755558|
+| 1660418      | [Nguyễn Phạm Hiền Nhung](https://www.facebook.com/nhung28051997)      |   nphiennhung@gmail.com |0359793355|
+| 1660460 | [Trần Nhật Phương](https://www.facebook.com/nhatphuong.tran.5)      | phuongphonui98@gmail.com|0346394242|
