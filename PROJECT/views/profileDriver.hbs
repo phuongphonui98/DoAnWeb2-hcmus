@@ -1,0 +1,83 @@
+<title>Thông Tin Tài Xế</title>
+<body>
+   <div id="wrapper">
+      <center>
+         <h1 style="color: #055699">Thông Tin Chi Tiết</h1>
+      </center>
+      <div id="maincontent">
+         <div class="container">
+            <div class="col-md-12 bor">
+               <section >
+                  <div class="col-md-8 text-center">
+                     <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                              <img src="{{User.ImagePath}}" style="width:200px; height: 300px" >
+                    
+                     </div>
+                     
+                  </div>
+               
+                  <div class="col-md-4 bor" style="margin-top: 10px;padding: 10px;background: #cd8225 ">
+                     <ul id="right" style="">
+
+                        <p ><strong style="color: white"><b >Email: {{User.Email}}</b></strong>
+                        <hr>
+                        <p ><strong style="color: white"><b >Số Điện Thoại:{{User.SDT}} </b></strong>
+                        <hr>
+                        <p ><strong style="color: white"><b >Họ Tên:{{User.HoTen}} </b></strong>
+                        <hr>
+                        <p ><strong style="color: white"><b >Biển Số:{{User.SoXe}}</b></strong>
+                        
+                           <br>
+                     </ul>
+                  </div>
+                  <form method="POST" action="/editprofile">
+                     <div class="col-md-4 bor" style="margin-top: 20px;padding: 30px;">
+                        
+                        <br>
+                        <center><button  class="btn btn-primary" name="submit" type ="submit" value={{User.id}}> Thay Đổi Thông Tin</button></center>
+                     </div>
+                  </form>
+               </section>
+               <div class="clearfix"></div>
+            </div>
+
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="container">
+   <center>
+         <h1 style="color: #055699">Lịch Sử Chuyến Đi</h1>
+               <table >
+                  <thead>
+                     <tr>
+                        <th>ID</th>
+                        <th>Khách hàng</th>
+                        <th>Điểm Đi</th>
+                        <th>Điểm Đến</th>
+                        <th>Giá Tiền</th>
+                     </tr>
+                  <tbody>
+                     {{#each datxe}}
+                        <tr>
+                      <td>{{id}}</td>
+                      <td>{{TenKH}}</td>
+                      <td>{{From}}</td>
+                      <td>{{To}}</td>
+                      <td>{{Price}}</td></tr>
+                      {{/each}}
+                      </tbody>
+                      </thead>
+                      </table>
+                      <div class="pagination">
+  <a href="#">&laquo;</a>
+  <a href="#">1</a>
+  <a href="#">2</a>
+  <a href="#">&raquo;</a>
+  </div>
+      </center>
+      </div>
+   <script  src="js/slick.min.js"></script>
+   
+</body>

@@ -1,0 +1,115 @@
+
+<!-- BEGIN PAGE TITLE -->
+<style>
+  #main-title-wrap, #main-title-undertext {
+    text-align:center;
+  }
+</style>
+<div id="top-content-divider">
+  <div class="container">
+    <div id="main-title-wrap"> <span class="icon-star"></span>Giới thiệu BMoto</div>
+    <div id="main-title-undertext"></div>
+  </div>
+</div>
+        
+        <!-- END PAGE TITLE --> 
+<!-- BEGIN PAGE CONTENT -->
+<div class="container reservation-page-wrap">
+  <div class="box_full"> 
+     <div class="box_x">
+     <div class="contact_info">
+        <div style="margin-top:30px"><strong>BMoto – AN TÂM TRÊN MỌI NẺO ĐƯỜNG</strong></div>
+      <div style="margin-top:30px">
+          <strong style="color: #365899">CTY TNHH 3TV - Web2.HCMUS  </strong></div>
+      <div>
+        
+        <strong> Số ĐKKD:</strong>  999999999 do Trường
+        Đại học Khoa Học Tự Nhiên TPHCM cấp   </div>
+          <div><strong> Địa chỉ:</strong>  227 Nguyễn Văn Cừ, Phường 4, Quận 5,TP. Hồ Chí Minh  </div>
+          <div><strong>Điện thoại:</strong><a href="#">  0359 793 535 </a></div>                     
+          <div><strong>Website:</strong> <a href="/">Trangchu</a></div> <br>
+      </div>
+     
+     </div>
+     <div class="box_y">
+      <div style="margin:0">
+      <div id="main-title-wrap"> <span class="icon-star"></span>Đăng nhập thành viên</div>
+      <div class="clear"></div>
+
+      {{!-- LOGIN FORM --}}
+      <form role="form" style="padding-top: 20px" action="/" onsubmit="validateForm()"  method="POST">
+        <div class="form-group">
+          <label for="usrname"><span class="glyphicon glyphicon-user"></span> Email</label>
+          <input name="email_login" type="email" class="form-control" id="usrname" placeholder="Nhập email">
+        </div>
+        <div class="form-group">
+          <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Mật khẩu</label>
+          <input name="password_login" type="password" class="form-control" id="psw" placeholder="Nhập mật khẩu">
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox" value="" checked>Ghi nhớ</label>
+        </div>
+          <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Đăng nhập</button>
+          <div class="modal-footer">
+            <p style="color: black">Chưa có tài khoản <a href="/register" style="color:#de543e;text-decoration: underline">Đăng ký</a>
+            <button style="border:none;background:none;color:#de543e;text-decoration: underline" onclick="request()"> Quên mật khẩu</button></button>
+          </div>
+      </form>
+      {{!-- END LOGIN FORM --}}
+
+    </div>
+    
+
+    </div>
+    </div>
+
+ </div>
+
+
+<!--END PAGE CONTENT-->
+
+
+
+
+<script>
+  
+  function validateForm()
+  {
+    console.log("a");
+      var username = document.getElementById('usrname').value;
+      var password = document.getElementById('psw').value;
+  
+      if (username == ''){
+          alert('Bạn chưa nhập Email');
+      }
+      else if (password == '')
+      {
+          alert('Bạn chưa nhập mật khẩu');
+      }
+      else if(username == {{verify.Email}}) 
+      {
+        if(password == {{verify.Password}})
+        {
+          window.alert('Đăng nhập thành công!');
+          return true;
+        } 
+      }
+      else {
+        alert('Sai User hoặc Password!');
+      }
+      return false;
+  }
+  function reloadAsGet()
+  {
+
+    var loc = window.location;
+    window.location = loc.protocol + '//' + loc.host + loc.pathname + loc.search;
+    
+  }
+  window.onload = reloadAsGet();
+
+<script>
+  function request(){
+    window.alert("Vui lòng liên hệ tới đội ngũ quản lý : 0326.913.579");
+  }
+</script>

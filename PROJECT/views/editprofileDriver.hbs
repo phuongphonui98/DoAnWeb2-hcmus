@@ -1,0 +1,111 @@
+
+<!-- BEGIN PAGE TITLE -->
+<style>
+        #main-title-wrap, #main-title-undertext {
+                    text-align:center;
+                }
+        </style>
+    
+        <!-- END PAGE TITLE --> 
+<!-- BEGIN PAGE CONTENT -->
+<div id="top-content-divider">
+  <div class="container">
+    <div id="main-title-wrap"> <span class="icon-star"></span>Thông tin chi tiết</div>
+    <div id="main-title-undertext"></div>
+  </div>
+</div>
+        
+        <!-- END PAGE TITLE --> 
+<!-- BEGIN PAGE CONTENT -->
+<div class="container reservation-page-wrap">
+  <div class="box_full"> 
+     <div class="box_x">
+     <div class="contact_info">
+        <div style="margin-top:30px"><strong>BMoto – AN TÂM TRÊN MỌI NẺO ĐƯỜNG</strong></div>
+      <div style="margin-top:30px">
+          <strong style="color: #365899">CTY TNHH 3TV - Web2.HCMUS  </strong></div>
+      <div>
+        
+        <strong> Số ĐKKD:</strong>  999999999 do Trường
+        Đại học Khoa Học Tự Nhiên TPHCM cấp   </div>
+          <div><strong> Địa chỉ:</strong>  227 Nguyễn Văn Cừ, Phường 4, Quận 5,TP. Hồ Chí Minh  </div>
+          <div><strong>Điện thoại:</strong><a href="#">  0359 793 535 </a></div>                     
+          <div><strong>Website:</strong> <a href="/">Trangchu</a></div> <br>
+     </div>
+     </div>
+     <div class="box_y">
+      <div style="margin:0">
+      <div id="main-title-wrap"> <span class="icon-star"></span>Chỉnh sửa thông tin</div>
+      <div class="clear"></div>
+
+<form class="form-horizontal" action="/profile" method="POST">
+<fieldset>
+
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="editname">Họ Tên</label>  
+  <div class="col-md-4">
+  <input id="editname" name="editname" type="text" placeholder="{{User.HoTen}}" class="form-control input-md" required="">
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="editsdt">Số điện thoại</label>  
+  <div class="col-md-4">
+  <input id="editsdt" name="editsdt" type="text" placeholder="{{User.SDT}}" class="form-control input-md" required="">
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-4 control-label" for="editbs">Biển kiểm soát</label>  
+  <div class="col-md-3">
+  <input id="editbs" name="editbs" type="text" placeholder="{{User.SoXe}}" class="form-control input-md" required="">
+    
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-4 control-label" for="image">Đường Dẫn Ảnh</label>  
+  <div class="col-md-4" style="margin-top:5px">
+    <input id="image" name="image" class="input-file" type="file">
+  </div>
+</div>
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="submit"></label>
+  <div class="col-md-4">
+    <button type="submit" name="submit" value="{{User.id}}" class="btn btn-success">Lưu</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+
+    </div>
+    </div>
+    </div>
+
+ </div>
+  <div class="clear"></div>
+<div id="contact_map" class="bando" style="text-align: center">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.6371468520006!2d106.67900811417155!3d10.762422862396438!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f1bfc262bf1%3A0x4e843897f2900135!2zMjI3IMSQxrDhu51uZyBOZ3V54buFbiBWxINuIEPhu6ssIFBoxrDhu51uZyA0LCBRdeG6rW4gNSwgSOG7kyBDaMOtIE1pbmgsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1552290286134" width="1100" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+    
+  </div>
+    
+    <div class="clear"></div>
+    {{!-- window.location.href="/login"; --}}
+
+<br />
+<br />
+
+
+<script>
+        var checkPasswordValidity = function(){
+            if ($('#password').val() != $('#confirm').val()){
+                $('#confirm')[0].setCustomValidity('Password must match.');
+            } else {
+                $('#confirm')[0].setCustomValidity('');
+            }
+        }
+        $('#password').on('change', checkPasswordValidity);
+        $('#confirm').on('change', checkPasswordValidity);
+</script>

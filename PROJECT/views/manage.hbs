@@ -1,0 +1,76 @@
+<title>Quản Lý</title>
+<div class="container">
+<ul  class="nav nav-pills">
+   <li class="active">
+      <a  href="#1a" data-toggle="tab">Quản Lý Tài Xế</a>
+   </li>
+   <li><a href="#2a" data-toggle="tab">Quản Lý Chuyến Đi</a>
+   </li>
+</ul>
+<div class="tab-content">
+<div class="tab-pane active" id="1a">
+   <center>
+      <table >
+         <thead>
+            <tr>
+               <th>ID</th>
+               <th>Tên </th>
+               <th>Email</th>
+               <th>SĐT</th>
+               <th>Biển Số</th>
+            </tr>
+         <tbody>
+            {{#each user}}
+            <tr>
+            <td>{{id}}</td>
+            <td>{{HoTen}}</td>
+            <td>{{Email}}</td>
+            <td>{{SDT}}</td>
+            <td>{{SoXe}}</td>            
+            </tr>
+            {{/each}}
+         </tbody>
+         </thead>
+      </table>
+      <div class="pagination">
+         <a href="#">&laquo;</a>
+         <a href="#">1</a>
+         <a href="#">2</a>
+         <a href="#">&raquo;</a>
+      </div>
+   </center>
+</div>
+<div class="tab-pane" id="2a">
+      <table >
+         <thead>
+            <tr>
+               <th>ID</th>
+               <th>Điểm Đi</th>
+               <th>Điểm Đến</th>
+               <th>Giá Tiền</th>
+               <th>Tài Xế</th>
+               <th>Khách Hàng</th>               
+            </tr>
+         <tbody>
+            {{#each datxe}}
+            <tr>
+            <td>{{id}}</td>
+            <td>{{From}}</td>
+            <td>{{To}}</td>
+            <td>{{Price}}</td>
+            <td>{{TenTX}}</td>
+            <td>{{TenKH}}</td></tr>
+            {{/each}}
+         </tbody>
+         </thead>
+      </table>
+      <center>
+      <div class="pagination">
+         <a href="#">&laquo;</a>
+         <a href="#">1</a>
+         <a href="#">2</a>
+         <a href="#">&raquo;</a>
+      </div>
+</div>
+</div>
+</div>

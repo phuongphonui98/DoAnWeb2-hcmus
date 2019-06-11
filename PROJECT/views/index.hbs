@@ -1,0 +1,218 @@
+ <input id="pac-input" class="controls" style="border-radius: 1rem;margin-top:10px" type="text" placeholder="Nhập địa điểm đến">
+    <div id="map"></div>
+
+
+    <script>
+    var pos,res;
+          var infor={
+              kc:null,
+              gia:null,
+              plc:null,
+              stay:null
+              
+          }
+          function getDistanceFromLatLonInKm(lat1,lon1,lat2,lon2) {
+      var R = 6371; // Radius of the earth in km
+      var dLat = deg2rad(lat2-lat1);  // deg2rad below
+      var dLon = deg2rad(lon2-lon1); 
+      var a = 
+        Math.sin(dLat/2) * Math.sin(dLat/2) +
+        Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * 
+        Math.sin(dLon/2) * Math.sin(dLon/2)
+        ; 
+      var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+      var d = R * c; // Distance in km
+      return d;
+    }
+
+    function deg2rad(deg) {
+      return deg * (Math.PI/180)
+    }
+      function initAutocomplete() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -33.8688, lng: 151.2195},
+          zoom: 18,
+          mapTypeId: 'roadmap'
+        });
+         infoWindow = new google.maps.InfoWindow;
+         var geocoder = new google.maps.Geocoder;
+
+         var check={{{check}}};
+          if(check==1){
+            var socket = io('http://localhost:5000');
+           
+            
+            var user={{{ArrUser}}};
+            console.log(user);
+            var myLatLng = {lat: parseFloat(user.X), lng: parseFloat(user.Y)};
+            console.log(myLatLng);
+            map.setCenter(myLatLng);
+            var marker = new google.maps.Marker({
+              position: myLatLng,
+              map: map,
+              title: user.Email
+            });
+            socket.on('send_data',(data)=>{
+              console.log(data)
+              if(confirm('Địa điểm đi : '+ data.stay+'\n' +'Địa điểm đến :' + data.plc +'\n'+
+              'Tên khách :'+ data.ten  +'\n'+
+              'Số phone : '+ data.sdt  +'\n' +
+              'Giá : '+ Math.ceil(data.gia)+ ' Vnđ' + '\n'+
+              'Xác nhận chuyến đi ?'    
+              )){
+                socket.emit('xacnhan',1);
+                console.log(user.HoTen);
+                  $.ajax({
+                  url: '/themdatabase',
+                  type: 'POST',
+                  data:{
+                      TenKH: data.ten,
+                      From: data.stay,
+                      To: data.plc,
+                      Price: data.gia,
+                      TenTX: user.HoTen
+                  },
+                  success: function(){
+                      alert("Thêm thành công!");
+                  }
+              })
+              }
+              else socket.emit('xacnhan',0);
+            })
+
+          }
+          else{
+            var socketemp = io('http://localhost:5000')
+            user={{{ArrUser}}};
+            console.log(user);
+            user.forEach(i=>{
+              var myLatLng = {lat: parseFloat(i.X), lng: parseFloat(i.Y)};
+            console.log(myLatLng);
+            map.setCenter(myLatLng);
+            var marker = new google.maps.Marker({
+              position: myLatLng,
+              map: map,
+              title: i.Email
+            });
+            })
+             socketemp.on('traloi',(checkk)=>{
+            if(checkk == 1){
+              alert('Tài xế sẽ đến sau 5 phút!');
+            }else alert('Tài xế không đến được. Vui lòng đặt lại chuyến khác!');
+          })
+            if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+            geocoder.geocode({'location':pos},function(result){
+              console.log(result[0].formatted_address);
+              infor.stay = result[0].formatted_address;
+            })
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('Your stay!');
+            
+
+            infoWindow.open(map);
+            map.setCenter(pos);
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infoWindow, map.getCenter());
+        }
+          }
+        
+      
+        // Create the search box and link it to the UI element.
+        var input = document.getElementById('pac-input');
+        var searchBox = new google.maps.places.SearchBox(input);
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+        // Bias the SearchBox results towards current map's viewport.
+        map.addListener('bounds_changed', function() {
+          searchBox.setBounds(map.getBounds());
+        });
+
+        var markers = [];
+        // Listen for the event fired when the user selects a prediction and retrieve
+        // more details for that place.
+        searchBox.addListener('places_changed', function() {
+          var places = searchBox.getPlaces();
+
+          if (places.length == 0) {
+            return;
+          }
+
+          // Clear out the old markers.
+          markers.forEach(function(marker) {
+            marker.setMap(null);
+          });
+          markers = [];
+
+          // For each place, get the icon, name and location.
+          var bounds = new google.maps.LatLngBounds();
+          places.forEach(function(place) {
+            if (!place.geometry) {
+              console.log("Returned place contains no geometry");
+              return;
+            }
+            var icon = {
+              url: place.icon,
+              size: new google.maps.Size(71, 71),
+              origin: new google.maps.Point(0, 0),
+              anchor: new google.maps.Point(17, 34),
+              scaledSize: new google.maps.Size(25, 25)
+            };
+
+            // Create a marker for each place.
+            markers.push(new google.maps.Marker({
+              map: map,
+              icon: icon,
+              title: place.name,
+              position: place.geometry.location
+            }));
+            infor.plc=place.name;
+          console.log(place);
+            if (place.geometry.viewport) {
+              // Only geocodes have viewport.
+              bounds.union(place.geometry.viewport);
+            } else {
+              bounds.extend(place.geometry.location);
+            }
+          });
+          map.fitBounds(bounds);
+          
+          console.log(pos);
+          var ne = bounds.getNorthEast();
+          var sw = bounds.getSouthWest();
+
+          res ={
+              lat: 0.5*(ne.lat()+sw.lat()),
+              lng: 0.5*(ne.lng()+sw.lng())
+          } 
+          console.log(res);
+          infor.kc = Math.ceil(getDistanceFromLatLonInKm(pos.lat,pos.lng,res.lat,res.lng));
+          infor.gia = Math.ceil(10000 + infor.kc*3500);
+          console.log(infor);
+          socketemp.emit('infor',infor);
+         
+        });
+      }
+      
+      // This example adds a search box to a map, using the Google Place Autocomplete
+      // feature. People can enter geographical searches. The search box will return a
+      // pick list containing a mix of places and predicted search terms.
+
+      // This example requires the Places library. Include the libraries=places
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+      
+      
+      
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBd3W6I9aPoxwjstB1ngCP5dHeC1s7aNd0&libraries=places&callback=initAutocomplete"
+         async defer></script>

@@ -1,0 +1,220 @@
+@media only screen and (min-width: 100px) and (max-width: 800px) {
+	.ty-menu-vertical
+	{
+		padding-top:10px;
+	}
+	.sprice
+	{
+		font-size:90%;
+		color:#999999;
+		text-decoration:line-through;
+	}
+	#tab1 img
+	{
+		width:100% !important;
+		height:auto !important;
+	}
+	a.ty-menu__item-link
+	{
+		text-decoration:none;
+	}
+		.mb_popup
+	{
+		background-color:#000;
+		opacity:0.8;
+		position:fixed;
+		left:0;
+		top:0;
+		right:0;
+		bottom:0;
+		width:100%;
+		height:100%;
+		z-index:900;
+		display:none;
+	}
+	#vmenu_61  a.ty-menu__item-link
+	{
+		color:#383838 ;
+	}
+	.mb_menu_body
+	{
+		background-color:#fff;
+		overflow:hidden;
+	}
+	.mb_menu_btn
+	{
+		float:left;
+		cursor:pointer;
+		width: 40px;
+		height: 40px;
+		background-repeat: no-repeat;
+		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjQ4MjMzMzVFQkM3ODExRTZCMzA2RUYwRjI3NUVDOTEwIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjQ4MjMzMzVGQkM3ODExRTZCMzA2RUYwRjI3NUVDOTEwIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NDgyMzMzNUNCQzc4MTFFNkIzMDZFRjBGMjc1RUM5MTAiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NDgyMzMzNURCQzc4MTFFNkIzMDZFRjBGMjc1RUM5MTAiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5d1rb+AAAAWElEQVR42uzWsQ3AIAwAQaBgOAbJTrCsYQiSuDhL7k9GL1EjomSeVpIPICAgICDgN8B+dp6NCzveuuCT/YnXH8DquwWoYhWLRMUqVrGKAQEBAQEB884WYABY9kTJ/Va+oQAAAABJRU5ErkJggg==);
+		}
+		.mb_logo
+		{
+			color: #fff;
+			text-align: center;
+			font-weight: 700;
+			width: 100%;
+			display: block;
+			line-height: 40px;
+		}
+	.mb_menu
+	{
+		width:100%;
+		position:fixed;
+		top:0;
+		left:0;
+		right:0;
+		height:40px;
+		background-color:#e8018f;
+		z-index:1000;
+	}
+	.mb_menu_body
+	{
+		display:none;
+		width:80%;
+		position:fixed;
+		height:100%;
+		bottom:0;
+		top:0;
+		left:0;
+		right:0;	
+		z-index:1000;
+		border:1px solid #dfdfdf;
+	}
+	.mb_menu_body li
+	{
+		border-bottom:1px solid #dfdfdf;
+	}
+	a.bar_cart_icon
+	{
+	display: block !important;
+    padding: 0px !important;
+    border-radius: 9px;
+    color: #fff;
+    background-color: #8b8b8b;
+    height: 17px !important;
+    text-align: center;
+    width: 15px;
+    position: absolute;
+    top: 1%;
+    right: 5%;
+    font-size: 90%;
+	overflow:hidden;
+	}
+	span.mb_right_hotline
+	{
+		   position: fixed;
+			bottom: 0px;
+			left: 0px;
+			right:0;
+			display: block;
+			width: 100%;
+			height: 45px;
+			z-index: 999;
+			background-color: #fff;
+			padding: 0;
+			border-top:1px solid #e3e3e3;
+			color: #fff !important;
+			overflow:hidden;
+			
+		
+	}
+	span.mb_bar
+	{
+		width:100%;
+		position:relative;
+		display:block;
+	}
+	img.icon_bottom
+	{
+		position:absolute;
+		top:0;
+		left:0;
+		right:0
+	}
+	span.mb_bar li
+	{
+		width:20%;
+		float:left;
+		min-height: 45px;
+	}
+	span.mb_bar li span{
+		padding-top: 22px;
+		display: block;
+		color: #8b8b8b;
+		width: 100%;
+		text-align: center;
+		font-size:75%;
+		cursor:pointer;
+	}
+	span.mb_bar ul
+	{
+		width:100%;
+		position:absolute;
+		left:0;
+		right:0;
+		top:0;
+		z-index:10;
+		padding:0;
+		margin:0;
+	}	
+.box_x
+{
+	width:100% !important;
+	
+}
+.box_y
+{
+	margin-left:0 !important;
+	width:100% !important;
+
+}
+.bando iframe {
+    width: 100% !important;
+    height: auto !important;
+}	
+#reservation-widget-header
+{
+	width:100% !important;
+}	
+#reservation-widget-content
+{
+	width:100% !important;
+	clear:both;
+	padding:0 !important;
+}
+#txtphone
+{
+	width:95% !important;
+}
+#reservation-widget-content #submit-button
+{
+	width:95% !important;
+}	
+#reservation-widget-content form
+{
+	padding:5% !important;
+}
+#reservation-widget-wrap #check-in-wrap
+{
+	width:100%;
+}	
+#reservation-widget-content #submit-button {
+	font-size: 1.1em;
+	width: 216px;
+	background: #00aeef;
+	color: #fff;
+	font-weight: 300;
+	box-shadow: none !important;
+	margin-top: 23px;
+	border-radius: 6px;
+	outline: none;
+	border: none;
+	display: inline-block;
+	padding: 4px;
+	text-align: center;
+	text-decoration: none;
+}
+}

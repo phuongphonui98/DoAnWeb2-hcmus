@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+<!--<![endif]-->
+<head>
+    <title>Đặt xe</title>
+    <meta name="description" content=" abc" />
+    <link type="image/x-icon" rel="icon" href="/images/title_icon.png"  />
+    <link href="/images/title_icon.png" rel="shortcut icon" type="image/png" />
+    <meta content="/" property="og:url"/>
+    <link rel="canonical" href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='dns-prefetch' href='/maps.googleapis.com' />
+    <link rel='dns-prefetch' href='/fonts.googleapis.com' />
+    <link rel='dns-prefetch' href='/s.w.org' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <style id='rs-plugin-settings-inline-css' type='text/css'>
+    .tp-caption a {
+        color:#ff7302;
+        text-shadow:none;
+        -webkit-transition:all 0.2s ease-out;
+        -moz-transition:all 0.2s ease-out;
+        -o-transition:all 0.2s ease-out;
+        -ms-transition:all 0.2s ease-out
+    }
+    .tp-caption a:hover {
+        color:#ffa902
+    }
+    #map {
+        height: 500px;
+      }
+      #description {
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+      }
+
+      #infowindow-content .title {
+        font-weight: bold;
+      }
+
+      #infowindow-content {
+        display: none;
+      }
+
+      #map #infowindow-content {
+        display: inline;
+      }
+
+      .pac-card {
+        margin: 10px 10px 0 0;
+        border-radius: 2px 0 0 2px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        outline: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        background-color: #fff;
+        font-family: Roboto;
+      }
+
+      #pac-container {
+        padding-bottom: 12px;
+        margin-right: 12px;
+      }
+
+      .pac-controls {
+        display: inline-block;
+        padding: 5px 11px;
+      }
+
+      .pac-controls label {
+        font-family: Roboto;
+        font-size: 13px;
+        font-weight: 300;
+      }
+
+      #pac-input {
+        background-color: #fff;
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+        margin-left: 12px;
+        padding: 0 11px 0 13px;
+        text-overflow: ellipsis;
+        width: 400px;
+      }
+
+      #pac-input:focus {
+        border-color: #4d90fe;
+      }
+
+      #title {
+        color: #fff;
+        background-color: #4d90fe;
+        font-size: 25px;
+        font-weight: 500;
+        padding: 6px 12px;
+      }
+      #target {
+        width: 345px;
+      }
+    </style>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel='stylesheet' id='rs-plugin-settings-css'  href='/css/setting.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='bookingcalendar-css'  href='/css/booking-calendar-pro.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='settings-css'  href='/css/settings1.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='style-css'  href='/css/style.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='style-css'  href='/css/mobile.css' type='text/css' media='all' />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <script src="socket.io/socket.io.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <script type='text/javascript' src='/js/jquery.js'></script>
+    <script type='text/javascript' src='/js/jquery-migrate.min.js'></script>
+    <script type='text/javascript' src='/js/jquery.themepunch.tools.min.js'></script>
+    <script type='text/javascript' src='/js/jquery.themepunch.revolution.min.js'></script>
+    <script type='text/javascript' src='/js/core.min.js'></script>
+    <script type='text/javascript' src='/js/datepicker.min.js'></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBd3W6I9aPoxwjstB1ngCP5dHeC1s7aNd0&libraries=geometry"></script>
+
+
+</head>
+<body id="to-top" class="home page-template page-template-home-page page-template-home-page-php page page-id-534 page-parent">
+    <div id="wrapper">
+        {{> header }}
+        {{{body}}}
+        {{> footer }}
+    </div>
+    
+    
+</body>
+</html> 
